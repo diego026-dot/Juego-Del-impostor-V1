@@ -159,3 +159,20 @@ export const items = [
   "Toluca",
   "León"
 ];
+
+
+export type Player = {
+  name: string;
+  role: "impostor" | "civil";
+};
+
+export type PlayerSetupProps = {
+  players: string[];
+  setPlayers: React.Dispatch<React.SetStateAction<string[]>>;
+  onStart: () => void;
+};
+
+export type RevealCardProps = {
+  player: Player | undefined;
+  word: string;
+};

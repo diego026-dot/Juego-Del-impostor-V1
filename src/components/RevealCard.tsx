@@ -1,6 +1,8 @@
 import { useState } from "react";
 
-export default function RevealCard({ player, word }) {
+import { RevealCardProps } from "@/types/index";
+
+export default function RevealCard({ player, word }: RevealCardProps) {
     const [revealed, setRevealed] = useState(false);
 
     if (!player) return null;

@@ -1,6 +1,11 @@
 import { useState } from "react";
+import { PlayerSetupProps } from "@/types/index";
 
-export default function PlayerSetup({ setPlayers, players, onStart }) {
+export default function PlayerSetup({
+  setPlayers,
+  players,
+  onStart
+}: PlayerSetupProps) {
 
     const [input, setInput] = useState("")
 

@@ -1,14 +1,14 @@
 import PlayerSetup from "@/components/PlayerSetup";
 import RevealCard from "@/components/RevealCard";
 import { useState } from "react";
-import { items } from "@/types";
+import { items, Player } from "@/types/index";
 
 export default function App() {
   const [phase, setPhase] = useState("setup");
-  const [players, setPlayers] = useState([]);
   const [currentPlayer, setCurrentPlayer] = useState(0);
   const [word, setWord] = useState("");
-  const [playersRoles, setPlayersRoles] = useState([]);
+  const [playersRoles, setPlayersRoles] = useState<Player[]>([]);
+  const [players, setPlayers] = useState<string[]>([]);
 
 
 
@@ -25,7 +25,7 @@ export default function App() {
     const randomWord = items[Math.floor(Math.random() * items.length)];
     const impostorIndex = Math.floor(Math.random() * players.length);
 
-    const playersWithRoles = players.map((name, index) => ({
+    const playersWithRoles : any = players.map((name, index) => ({
       name,
       role: index === impostorIndex ? "impostor" : "civil",
     }));
